@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <template id="product" inherit_id="website_sale.product">
+            <xpath expr="//div[@id='product_full_description']" position="after">
+                <div class="container">
+                    <div class='col-sm-7'>
+                        <t t-if='quant'>
+                            <h4>Barang ini tersedia di : </h4>
+                            <table class="table table-striped">
+                                <tr>
+                                    <th class='col-sm-9'>Cabang Toko</th>
+                                    <th align='center'>Stock tersedia</th>
+                                </tr>
+                                <t t-foreach="quant" t-as="q">
+                                    <tr>
+                                        <td class='col-sm-9'><t t-esc="q.location_id.warehouse_id.name"/></td>
+                                        <td align='center'><t t-esc="int(q.current_stock)"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                        <t t-else=''>
+                            <h4 class='text-muted'>Barang ini tidak tersedia</h4>
+                        </t>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

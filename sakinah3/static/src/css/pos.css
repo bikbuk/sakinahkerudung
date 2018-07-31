@@ -1,0 +1,16 @@
+.pos .numpad {
+    float: left !important;
+    width: auto !important;
+}
+
+.screen .screen-content {
+    max-width: 1160px !important;
+}
+
+.screen .left-content.pc40 {
+	right: 70% !important;
+}
+
+.screen .right-content.pc60 {
+	left: 30% !important;
+}

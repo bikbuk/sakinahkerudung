@@ -1,0 +1,7 @@
+<odoo>
+    <template id="assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <link href="/sakinah3/static/src/css/pos.css" rel="stylesheet" type="text/css"/>
+        </xpath>
+    </template>
+</odoo>
