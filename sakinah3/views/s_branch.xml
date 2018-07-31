@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="sakinah_branch_wizard">
+            <field name="name">sakinah_branch_wizard.form</field>
+            <field name="model">sakinah.branch</field>
+            <field name="arch" type="xml">
+                <form string="Create Branch">
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                    </group>
+                    <footer>
+                        <button name="start" string="_Create" type="object" class="btn-primary"/>
+                        <button string="_Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!--
+        <record id="launch_my_wizard" model="ir.actions.act_window">
+            <field name="name">My Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">my.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="my_wizard_form_view"/>
+            <field name="target">new</field>
+        </record>
+        -->
+        <record model="ir.actions.act_window" id="launch_branch_wizard">
+            <field name="name">Create Branch</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sakinah.branch</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sakinah_branch_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="sakinah_branch" name="Sakinah Branch" sequence='61' parent="stock.menu_stock_config_settings" action="launch_branch_wizard"/>
+        
+    </data>
+</odoo>

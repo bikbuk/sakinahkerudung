@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="sakinah_api_tree">
+      <field name="name">Sakinah API List</field>
+      <field name="model">sakinah.api</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="api_database"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="sakinah_api_form">
+      <field name="name">sakinah api form</field>
+      <field name="model">sakinah.api</field>
+      <field name="arch" type="xml">
+        <form string="Create API Config">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="api_url"/>
+              <field name="api_database"/>
+            </group>
+            <group>
+              <field name="api_email"/>
+              <field name="api_password" password='True'/>
+            </group>
+            <group>
+              <field name="api_active"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sakinah_api_action_window">
+      <field name="name">Sakinah API</field>
+      <field name="res_model">sakinah.api</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Sakinah API" id="sakinah_api_root" sequence='60' parent="stock.menu_stock_config_settings" action="sakinah_api_action_window"/>
+  </data>
+</odoo>
